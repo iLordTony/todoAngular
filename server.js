@@ -1,7 +1,6 @@
 var express = require('express');
 var app = express();
 var swig = require('swig');
-var path = require('path');
 
 var port = process.env.PORT || 8080;
 app.engine('html', swig.renderFile);
@@ -10,6 +9,14 @@ app.set('views', __dirname + '/app/views/templates');
 
 app.get('/', function (req, res, next) {
     res.render('index');
+});
+
+app.get('/api', function (req, res, next) {
+    var data = {
+        valor: "Esto es de prueba"
+    };
+    res.set('Content-Type', 'application/json')
+        .json(data);
 });
 
 app.listen(port, function () {
