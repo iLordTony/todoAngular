@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var swig = require('swig');
 var path = require('path');
+var cors = require('cors');
 
 var port = process.env.PORT || 8080;
 app.engine('html', swig.renderFile);
@@ -10,7 +11,8 @@ swig.setDefaults({varControls: ['{$', '$}']});
 
 app.set('views', __dirname + '/app/views/templates');
 
-app.use(express.static(path.join(__dirname, './app/static/')))
+app.use(express.static(path.join(__dirname, './app/static/')));
+app.use(cors());
 
 app.get('/', function (req, res, next) {
     res.render('index');
