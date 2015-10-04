@@ -4,7 +4,8 @@
   "description": "Una aplicacion de prueba con el stack MEAN y heroku",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp-js": "gulp js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,9 @@
     "swig": "^1.4.2"
   },
   "devDependencies": {
-    "browserify": "^11.1.0"
+    "browserify": "^11.1.0",
+    "gulp": "^3.9.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

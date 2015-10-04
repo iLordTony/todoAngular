@@ -1,11 +1,16 @@
 var express = require('express');
 var app = express();
 var swig = require('swig');
+var path = require('path');
 
 var port = process.env.PORT || 8080;
 app.engine('html', swig.renderFile);
 app.set('view engine', 'html');
+swig.setDefaults({varControls: ['{$', '$}']});
+
 app.set('views', __dirname + '/app/views/templates');
+
+app.use(express.static(path.join(__dirname, './app/static/')))
 
 app.get('/', function (req, res, next) {
     res.render('index');

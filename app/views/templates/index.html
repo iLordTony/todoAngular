@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <title>Hola</title>
 </head>
-<body>
-<h1>Hola como estas</h1>
+<body ng-app="blogApp">
+<div ng-controller="BlogController">
+  <h1>Hola como estas, {{titulo}}</h1>
+</div>
+
+<script src="./public/app.min.js" charset="utf-8"></script>
 </body>
 </html>
