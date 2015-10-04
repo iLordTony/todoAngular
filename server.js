@@ -20,7 +20,7 @@ app.get('/', function (req, res, next) {
 
 app.get('/api', function (req, res, next) {
     var data = {
-        valor: "Esto es de prueba"
+        valor: ["Esto es de prueba", "Prueba"]
     };
     res.set('Content-Type', 'application/json')
         .json(data);
